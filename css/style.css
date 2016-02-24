@@ -307,7 +307,7 @@ header.top h3:after {
   max-width: 1500px;
   margin: 0 auto;
   margin-top: 5vh;
-  perspective: 1000;
+/*perspective: 1000;*/
   transform-style: preserve-3d;
 }
 .catch-of-the-day > * {
@@ -327,13 +327,13 @@ header.top h3:after {
 }
 .catch-of-the-day > *:nth-child(2) {
   transform: translateX(-50%) rotateY(-14deg) translateX(50%);
-  border-left: 0;
-  border-right: 0;
+/*border-left 0
+      border-right 0*/
   min-width: 300px;
 }
 .catch-of-the-day > *:last-child {
   flex-shrink: 1;
-  flex-basis: 50%;
+  flex-basis: 40%;
   transform: translateX(-50%) rotateY(10deg) translateX(50%) scale(1.08) translateX(24px);
 }
 input#fold:not(:checked) ~ #main .catch-of-the-day > * {

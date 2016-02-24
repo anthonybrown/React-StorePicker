@@ -57,7 +57,7 @@ header.top
   max-width:1500px
   margin 0 auto
   margin-top 5vh
-  perspective: 1000;
+  /*perspective: 1000;*/
   transform-style preserve-3d
   & > *
     flex 1 4 auto
@@ -74,12 +74,12 @@ header.top
       transform translateX(50%) rotateY(6deg) translateX(-50%)
     &:nth-child(2)
       transform translateX(-50%) rotateY(-14deg) translateX(50%)
-      border-left 0
-      border-right 0
+      /*border-left 0
+      border-right 0*/
       min-width 300px
     &:last-child
       flex-shrink 1 // take 4x the extra room
-      flex-basis 50%
+      flex-basis 40%
       transform translateX(-50%) rotateY(10deg) translateX(50%) scale(1.08) translateX(24px)
 
 // Folding Transforms
