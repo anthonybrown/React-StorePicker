@@ -74,8 +74,9 @@ module.exports = {
 
 	fish10: {
 		name: 'Fresh Atlantic Salmon',
-		image:' http://thumbs.dreamstime.com/t/salmones-4123643.jpg',
-		desc: 'One of our best selling items, Atlantic Salmon is fresh',
+		//image:' http://thumbs.dreamstime.com/t/salmones-4123643.jpg',
+		image: 'http://cdn3.volusion.com/lbrau.plyvn/v/vspfiles/photos/3440-2.jpg?1413289390',
+		desc: 'One of our best selling items, Atlantic Salmon is caught fresh off the East Coast',
 		price: 1945,
 		status: 'available'
 	}
