@@ -1,6 +1,5 @@
 var React       = require('react');
 var ReactDOM    = require('react-dom');
-
 /* react-router componets */
 var ReactRouter = require('react-router');
 var Router      = ReactRouter.Router;
@@ -28,8 +27,14 @@ var h = require('./helpers');
 		 var timestamp = (new Date()).getTime();
 		 // update the state object.
 		 this.state.fishes['fish-' + timestamp] = fish;
-		 // set the state
+		 // set the statee
 		 this.setState({ fishes : this.state.fishes });
+	 },
+
+	 loadSamples: function() {
+	   this.setState({
+		   fishes: require('./sample-fishes')
+		 });
 	 },
 
 	 render: function () {
@@ -39,7 +44,7 @@ var h = require('./helpers');
 					<Header tagline='Fresh Seafood Is Awesome!' />
 				</div>
 				<Order />
-				<Inventory addFish={this.addFish} />
+				<Inventory addFish={this.addFish} loadSamples={this.loadSamples} />
 			</div>
 		 )
 	}
@@ -132,6 +137,7 @@ var Inventory = React.createClass({
 				<h2>Inventory</h2>
 
 				<AddFishForm {...this.props} />
+				<button onClick={this.props.loadSamples}>Load Sample Fishes</button>
 			</div>
 		)
 	}
@@ -143,7 +149,7 @@ var Inventory = React.createClass({
 */
 
 var StorePicker = React.createClass({
-	mixins: [History],
+  mixins: [History],
 	goToStore: function (e) {
 		//console.log(this.refs.storeId.value);
 		// get the data from the form

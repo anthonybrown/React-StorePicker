@@ -227,7 +227,7 @@ html {
   font-size: 62.5%;
 }
 body {
-  background: #e6e6e6;
+  background: #d4d4d4;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-family: 'Open Sans', sans-serif;
@@ -259,7 +259,7 @@ header.top {
   text-align: center;
 }
 header.top h1 {
-  font-size: 12.4rem;
+  font-size: 14.4rem;
   line-height: 0.7;
   display: -webkit-box;
   display: -webkit-flex;
@@ -333,7 +333,8 @@ header.top h3:after {
   max-width: 1500px;
   margin: 0 auto;
   margin-top: 5vh;
-/*perspective: 1000;*/
+  -webkit-perspective: 1000;
+          perspective: 1000;
   -webkit-transform-style: preserve-3d;
           transform-style: preserve-3d;
 }
@@ -358,25 +359,22 @@ header.top h3:after {
   -webkit-flex-basis: 50%;
       -ms-flex-preferred-size: 50%;
           flex-basis: 50%;
-  -webkit-transform: translateX(50%) rotateY(6deg) translateX(-50%);
-          transform: translateX(50%) rotateY(6deg) translateX(-50%);
+/*transform translateX(50%) rotateY(6deg) translateX(-50%)*/
 }
 .catch-of-the-day > *:nth-child(2) {
-  -webkit-transform: translateX(-50%) rotateY(-14deg) translateX(50%);
-          transform: translateX(-50%) rotateY(-14deg) translateX(50%);
-/*border-left 0
-      border-right 0*/
+/*transform translateX(-50%) rotateY(-14deg) translateX(50%)*/
+  border-left: 0;
+  border-right: 0;
   min-width: 300px;
 }
 .catch-of-the-day > *:last-child {
   -webkit-flex-shrink: 1;
       -ms-flex-negative: 1;
           flex-shrink: 1;
-  -webkit-flex-basis: 40%;
-      -ms-flex-preferred-size: 40%;
-          flex-basis: 40%;
-  -webkit-transform: translateX(-50%) rotateY(10deg) translateX(50%) scale(1.08) translateX(24px);
-          transform: translateX(-50%) rotateY(10deg) translateX(50%) scale(1.08) translateX(24px);
+  -webkit-flex-basis: 50%;
+      -ms-flex-preferred-size: 50%;
+          flex-basis: 50%;
+/*transform translateX(-50%) rotateY(10deg) translateX(50%) scale(1.08) translateX(24px)*/
 }
 input#fold:not(:checked) ~ #main .catch-of-the-day > * {
   -webkit-transform: none;
@@ -651,7 +649,7 @@ input[type=submit].twitter:after {
 }
 .store-selector {
   background: #fff;
-  max-width: 700px;
+  max-width: 500px;
   margin: 50px auto;
   padding: 2rem;
   border: 2px solid #000;

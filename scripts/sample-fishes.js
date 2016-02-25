@@ -70,5 +70,14 @@ module.exports = {
     desc : 'With 21-25 two bite prawns in each pound, these sweet morsels are perfect for shish-kabobs.',
     price : 2250,
     status : 'available'
-  }
+	},
+
+	fish10: {
+		name: 'Fresh Atlantic Salmon',
+		image: 'http://www.istockphoto.com/photo/fresh-raw-salmon-fillet-gm474055706-64357723',
+		desc: 'One of our best selling items, Atlantic Salmon is fresh',
+		price: 1945,
+		status: 'available'
+	}
+
 };

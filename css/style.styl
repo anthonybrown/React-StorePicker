@@ -5,7 +5,7 @@
 header.top
   text-align center
   h1
-    font-size 12.4rem
+    font-size 14.4rem
     line-height 0.7 // this font has a wacky baseline
     display flex
     justify-content: center;
@@ -57,7 +57,7 @@ header.top
   max-width:1500px
   margin 0 auto
   margin-top 5vh
-  /*perspective: 1000;*/
+  perspective: 1000;
   transform-style preserve-3d
   & > *
     flex 1 4 auto
@@ -71,16 +71,16 @@ header.top
     &:first-child
       flex-shrink 1 // take 4x the extra room
       flex-basis 50%
-      transform translateX(50%) rotateY(6deg) translateX(-50%)
+      /*transform translateX(50%) rotateY(6deg) translateX(-50%)*/
     &:nth-child(2)
-      transform translateX(-50%) rotateY(-14deg) translateX(50%)
-      /*border-left 0
-      border-right 0*/
+      /*transform translateX(-50%) rotateY(-14deg) translateX(50%)*/
+      border-left 0
+      border-right 0
       min-width 300px
     &:last-child
       flex-shrink 1 // take 4x the extra room
-      flex-basis 40%
-      transform translateX(-50%) rotateY(10deg) translateX(50%) scale(1.08) translateX(24px)
+      flex-basis 50%
+      /*transform translateX(-50%) rotateY(10deg) translateX(50%) scale(1.08) translateX(24px)*/
 
 // Folding Transforms
 // Take off folding when not checked
@@ -282,7 +282,7 @@ button, input[type=submit]
 // Store Selector
 .store-selector
   background white
-  max-width 700px
+  max-width 500px
   margin 50px auto
   padding 2rem
   border 2px solid black
