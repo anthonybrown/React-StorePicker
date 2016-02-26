@@ -9,9 +9,14 @@ var History     = ReactRouter.History;
 var createBrowserHistory = require('history/lib/createBrowserHistory');
 /* get the helpers.js file */
 var h = require('./helpers');
+// Firebase
+var Rebase = require('re-base');
+var base   = Rebase.createClass('https://reactapp-catchofday.firebaseio.com/');
+
 
 /*
-  App
+	 App
+	 <App />
 */
 
  var App = React.createClass({
@@ -21,6 +26,14 @@ var h = require('./helpers');
 			fishes : {},
 			order  : {}
 		}
+	 },
+
+	 componentDidMount: function () {
+		 //console.log('componentDidMount mounted.');
+		 base.syncState(this.props.params.storeId + '/fishes', {
+		   context: this,
+		   state: 'fishes'
+		 });
 	 },
 
 	 addToOrder: function(key) {

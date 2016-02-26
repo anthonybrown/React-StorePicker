@@ -33,7 +33,7 @@ let helpers =  {
 			'phenomena', 'criteria', 'data', 'dog', 'cat', 'crow', 'tiger', 'lion', 'dragon'
 		];
 
-    return `${this.rando(adjectives)} ${this.rando(adjectives)} ${this.rando(nouns)}`;
+    return `${this.rando(adjectives)}-${this.rando(adjectives)}-${this.rando(nouns)}`;
   }
 }
 
