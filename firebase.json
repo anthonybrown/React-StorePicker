@@ -1,6 +1,6 @@
 {
   "firebase": "reactapp-catchofday",
-  "public": "/",
+  "public": " ",
   "ignore": [
     "firebase.json",
     "**/.*",
