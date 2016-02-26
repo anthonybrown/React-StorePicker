@@ -9,7 +9,7 @@ var History     = ReactRouter.History;
 var createBrowserHistory = require('history/lib/createBrowserHistory');
 /* get the helpers.js file */
 var h = require('./helpers');
-// Firebase
+// Firebase connection with Reabse instead of react-fire provided from Firebase.
 var Rebase = require('re-base');
 var base   = Rebase.createClass('https://reactapp-catchofday.firebaseio.com/');
 
@@ -20,7 +20,7 @@ var base   = Rebase.createClass('https://reactapp-catchofday.firebaseio.com/');
 */
 
  var App = React.createClass({
-   // create an initial state for the App
+   // create an initial state for the App with getIntialState
    getInitialState: function () {
 		return {
 			fishes : {},
@@ -28,12 +28,28 @@ var base   = Rebase.createClass('https://reactapp-catchofday.firebaseio.com/');
 		}
 	 },
 
+	 // componentDidMount is part of the react API.
 	 componentDidMount: function () {
 		 //console.log('componentDidMount mounted.');
+		 // syncState needs 2 arguments a path and an object with the context and state
 		 base.syncState(this.props.params.storeId + '/fishes', {
 		   context: this,
 		   state: 'fishes'
 		 });
+
+		 var localStorageRef = localStorage.getItem('order-' + this.props.params.storeId);
+
+		 if (localStorageRef) {
+		   // update the component state to reflect what is in localStorage
+			 this.setState({
+			   order : JSON.parse(localStorageRef)
+			 });
+		 }
+	 },
+
+	 componentWillUpdate : function(nextProps, nextState) {
+		 //console.log(nextState);
+		 localStorage.setItem('order-' + this.props.params.storeId, JSON.stringify(nextState.order));
 	 },
 
 	 addToOrder: function(key) {
@@ -88,6 +104,7 @@ var Fish = React.createClass({
 		//this.props.addToOrder(this.props.index);
 		this.props.addToOrder(key);
 	},
+
 	render: function() {
 		var details = this.props.details;
 		var isAvailable = (details.status === 'available' ? true : false);
@@ -181,7 +198,7 @@ var Fish = React.createClass({
 		 	return <li key={key}>Sorry, fish no longer available!</li>
 		 }
 		 return (
-			 <li>
+			 <li key={key}>
 				{count}lbs
 				{fish.name}
 				<span className="price">{h.formatPrice(count * fish.price )}</span>

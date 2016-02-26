@@ -364,7 +364,7 @@ header.top h3:after {
 /*transform translateX(-50%) rotateY(-14deg) translateX(50%)*/
   border-left: 0;
   border-right: 0;
-  min-width: 300px;
+  min-width: 330px;
 }
 .catch-of-the-day > *:last-child {
   -webkit-flex-shrink: 1;
